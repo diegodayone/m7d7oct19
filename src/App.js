@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Input, Button, Row, Col } from "reactstrap"
 import { useTranslation, Trans } from "react-i18next"
+import TitleComponent from './components/TitleComponent';
 
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
         <ul>
           {taskList.map((t, i)=> (<li key={i} onClick={() => setTaskList(taskList.filter(x => x !== t))}>{t}</li>) )}
         </ul>
+      </Row>
+      <Row>
+        <TitleComponent title="Month-o-meter" age={20} className="whatever-bg" clicked={() => console.log("clicked")} tasks={taskList}  />
       </Row>
     </div>
   );
